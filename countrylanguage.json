@@ -1,0 +1,74 @@
+[
+	{
+		"countrycode": "IND",
+		"language": "Asami",
+		"percentage": 1.5,
+		"isofficial": "F"
+	},
+	{
+		"countrycode": "IND",
+		"language": "Bengali",
+		"percentage": 8.2,
+		"isofficial": "F"
+	},
+	{
+		"countrycode": "IND",
+		"language": "Gujarati",
+		"percentage": 4.8,
+		"isofficial": "F"
+	},
+	{
+		"countrycode": "IND",
+		"language": "Hindi",
+		"percentage": 39.9,
+		"isofficial": "T"
+	},
+	{
+		"countrycode": "IND",
+		"language": "Kannada",
+		"percentage": 3.9,
+		"isofficial": "F"
+	},
+	{
+		"countrycode": "IND",
+		"language": "Malajalam",
+		"percentage": 3.6,
+		"isofficial": "F"
+	},
+	{
+		"countrycode": "IND",
+		"language": "Marathi",
+		"percentage": 7.4,
+		"isofficial": "F"
+	},
+	{
+		"countrycode": "IND",
+		"language": "Orija",
+		"percentage": 3.3,
+		"isofficial": "F"
+	},
+	{
+		"countrycode": "IND",
+		"language": "Punjabi",
+		"percentage": 2.8,
+		"isofficial": "F"
+	},
+	{
+		"countrycode": "IND",
+		"language": "Tamil",
+		"percentage": 6.3,
+		"isofficial": "F"
+	},
+	{
+		"countrycode": "IND",
+		"language": "Telugu",
+		"percentage": 7.8,
+		"isofficial": "F"
+	},
+	{
+		"countrycode": "IND",
+		"language": "Urdu",
+		"percentage": 5.1,
+		"isofficial": "F"
+	}
+]
