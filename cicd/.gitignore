@@ -48,3 +48,4 @@ target/
 .tooling*/**/*
 .DS_Store
 velocity.log
+/bin/
