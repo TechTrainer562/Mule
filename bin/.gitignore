@@ -55,3 +55,4 @@ reports/
 .mule/**/*
 .tooling/**/*
 .tooling*/**/*
+/bin/
