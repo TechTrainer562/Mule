@@ -1,8 +1,0 @@
-101	Suman Kumar	Nizampet		Hyderabad
-102	Kumar Suman	Nizampet		Hyderabad
-103	Raj Kumar	Nizampet		Hyderabad
-104	Kumar Raj	Nizampet		Hyderabad
-105	Yoga Anand	Nizampet		Hyderabad
-106	Anand Yoga	Nizampet		Hyderabad
-107	Yoga Raj	Nizampet		Hyderabad
-108	Raj Yoga	Nizampet		Hyderabad
