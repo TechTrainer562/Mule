@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:os="http://www.mulesoft.org/schema/mule/os" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/os http://www.mulesoft.org/schema/mule/os/current/mule-os.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="614e6320-e1eb-4fcd-af4b-497b53cc68ea" >
+		<http:listener-connection host="localhost" port="9779" />
+	</http:listener-config>
+	<os:object-store name="Object_store_token_name" doc:name="Object store" doc:id="90644da7-a333-41b6-a74e-c29d530249aa" entryTtl="60" />
+	<configuration-properties doc:name="Configuration properties" doc:id="2bb0376d-d5a1-417f-b2b2-4c726c3981fb" file="acctoken.properties" />
+	<flow name="simpletokenFlow" doc:id="6bbbad99-d4c2-4aaf-b60d-6e8b50b15f28" >
+		<http:listener doc:name="Listener" doc:id="cb0cd5d7-f464-4be5-8228-1a5d2ff99642" config-ref="HTTP_Listener_config" path="/getToken"/>
+		<set-variable value="#[p('sample.acc.tokenname')]" doc:name="Set Variable" doc:id="f4038b0e-9082-43ab-bca4-9f894faea73a" variableName="objectStoreTokenName"/>
+		<logger level="INFO" doc:name="Logger" doc:id="46cad037-6a1b-4912-869f-34744173df5f" message="Mainflow - After Set Variable -  Logger - objectStoreTokenName: #[vars.objectStoreTokenName] |||| Payload: #[payload] ||||| oatoken: #[attributes.queryParams.oatoken]"/>
+		<set-payload value="#[attributes.queryParams.oatoken]" doc:name="Set Payload" doc:id="924f650d-dcb0-4f79-998b-2435cdab9f76" />
+		<os:contains doc:name="Contains" doc:id="9768e568-4a8f-4214-8e0e-81bb7cfa14b0" key="#[vars.objectStoreTokenName]" objectStore="Object_store_token_name"/>
+		<choice doc:name="Choice" doc:id="2dde1f36-5dfb-4cf6-bbb9-920dec6dc30e" >
+			<when expression="#[payload==false]">
+				<logger level="INFO" doc:name="Logger" doc:id="98448fe9-bed4-42ac-a942-4bf300eca28f" message="Mainflow - 1st Condition Choice Logger - Payload - #[payload] ||||| oatoken: #[attributes.queryParams.oatoken] ||||| objectStoreTokenName: #[vars.objectStoreTokenName]" />
+				<flow-ref doc:name="Flow Reference" doc:id="bcad8979-9d72-4c78-91c8-73127da421b3" name="simpletokenSub_Flow"/>
+				<os:store doc:name="Store" doc:id="3dc17984-24a6-44fa-bbeb-ec938c74a185" key="#[vars.objectStoreTokenName]" objectStore="Object_store_token_name">
+				</os:store>
+			</when>
+			<otherwise >
+				<os:retrieve doc:name="Retrieve" doc:id="1b68e924-8600-4b6c-84f4-28d3aa836ac2" key="#[vars.objectStoreTokenName]">
+					<os:default-value ><![CDATA[#[payload]]]></os:default-value>
+				</os:retrieve>
+				<logger level="INFO" doc:name="Logger" doc:id="102c2116-0b68-48b5-b989-2d1026f665fb" message="Mainflow - Default Choice Logger - Payload - #[payload]" />
+			</otherwise>
+		</choice>
+		<logger level="INFO" doc:name="Logger" doc:id="05f9de4d-bbd8-4dde-ad91-49cc5b54f749" message="Mainflow - Logger - End - Payload: #[payload]"/>
+	</flow>
+	<sub-flow name="simpletokenSub_Flow" doc:id="91efb7e4-2c10-4c29-b529-c7e4aee4cffa" >
+		<set-payload value="6bbbad99-d4c2-4aaf-b60d-6e8b50b15f28" doc:name="Set Payload" doc:id="08d331af-a2fa-498b-b4c6-639eb32bd9aa" />
+	</sub-flow>
+</mule>
