@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title> Read JSON Object Data </title>
+</head>
+<body>
+	<h2> Input Data </h2>
+	<p id="jsonObj"></p>
+	<hr/>
+	<h2> Output Data </h2>
+	<p id="jsonContent"></p>	
+	<script>
+		var myObj, strObj;
+		myObj = { name: "John", age: 30, city: "New York" };
+		myStr = JSON.stringify(myObj) // Convert JSON Object into a String
+		document.getElementById("jsonObj").innerHTML = "JSON Object: " + myStr;
+		document.getElementById("jsonContent").innerHTML = "Name:"+mystr.name+", Age:"+myObj.age+", City:"+myObj.city;
+	</script>
+	<hr/>
+	<h2> Script </h2>
+	<pre>
+		<font size='4'>
+			&lt;script&gt;
+				var myObj, strObj;
+				myObj = { name: "John", age: 30, city: "New York" };
+				myStr = JSON.stringify(myObj) // Convert JSON Object into a String
+				document.getElementById("jsonObj").innerHTML = "JSON Object: " + myStr;
+				document.getElementById("jsonContent").innerHTML = "Name:"+myObj.name+", Age:"+myObj.age+", City:"+myObj.city;
+			&lt;/script&gt;
+		</font>
+	</pre>
+	<center><b><a href="./JSON_Tutorial.html"><font size='6'>Back</font></a></b></center>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title> Arrays in JSON Object</title>
+</head>
+<body>
+	<h2> Input Data </h2>
+	<p id="jsonString"></p>
+	<hr/>
+	<h2> Output Data </h2>
+	<p id="jsonContent"></p>	
+	<hr/>
+	<h2> Output Data </h2>
+	<p id="jsonNestedContent"></p>	
+	<script>
+		var jsonAry={"name":"John","age":30,"cars":[ "Ford", "BMW", "Fiat" ]}
+		var myObj = jsonAry;
+		document.getElementById("jsonString").innerHTML = "Arrays in JSON Object: " + JSON.stringify(jsonAry);
+		for (key in jsonAry){
+			document.getElementById("jsonContent").innerHTML += key+":"+jsonAry[key]+"<br>" ;
+		}
+		for(nestedKey in myObj.cars){
+			document.getElementById("jsonNestedContent").innerHTML += nestedKey+":"+myObj.cars[nestedKey]+"<br>" ;
+		}
+		document.getElementById("jsonNestedContent").innerHTML += "<br>";
+		var nestedKei="";
+		for (i = 0; i < myObj.cars.length; i++) {
+			nestedKei = myObj.cars[i];
+			document.getElementById("jsonNestedContent").innerHTML += i+":"+nestedKei+"<br>" ;
+		}
+	</script>
+	<hr/>
+	<h2> Script </h2>
+	<pre>
+		<font size='4'>
+			&lt;script&gt;
+				var jsonAry={"name":"John","age":30,"cars":[ "Ford", "BMW", "Fiat" ]}
+				var myObj = jsonAry;
+				document.getElementById("jsonString").innerHTML = "Arrays in JSON Object: " + JSON.stringify(jsonAry);
+				for (key in jsonAry){
+					document.getElementById("jsonContent").innerHTML += key+":"+jsonAry[key]+"&lt;br&gt;";
+				}
+				for(nestedKey in myObj.cars){
+					document.getElementById("jsonNestedContent").innerHTML += nestedKey+":"+myObj.cars[nestedKey]+"&lt;br&gt;";
+				}
+				document.getElementById("jsonNestedContent").innerHTML +="&lt;br&gt;";
+				var nestedKei="";
+				for (i = 0; i < myObj.cars.length; i++) {
+					nestedKei += myObj.cars[i];
+					document.getElementById("jsonNestedContent").innerHTML += i+":"+nestedKei+"&lt;br&gt;";
+				}
+			&lt;/script&gt;
+		</font>
+	</pre>
+	<center><b><a href="./JSON_Tutorial.html"><font size='6'>Back</font></a></b></center>	
+</body>
+</html>

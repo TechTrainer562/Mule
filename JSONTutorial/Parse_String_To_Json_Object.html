@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title> Convert JSON String to JSON Object</title>
+</head>
+<body>
+	<h2> Input Data </h2>
+	<p id="jsonString"></p>
+	<hr/>
+	<h2> Output Data </h2>
+	<p id="jsonContent"></p>	
+	<script>
+		var jsonStr='{"name": "John", "age": 30, "city": "New York" }';
+		var myObj = JSON.parse(jsonStr) // Convert JSON String into a JSON Object
+		document.getElementById("jsonString").innerHTML = "JSON Object in String: " + jsonStr;
+		document.getElementById("jsonContent").innerHTML = "Name:"+myObj.name+", Age:"+myObj.age+", City:"+myObj.city;
+	</script>
+	<hr/>
+	<h2> Script </h2>
+	<pre>
+		<font size='4'>
+			&lt;script&gt;
+				var jsonStr='{"name": "John", "age": 30, "city": "New York" }';
+				var myObj = JSON.parse(jsonStr) // Convert JSON String into a JSON Object
+				document.getElementById("jsonString").innerHTML = "JSON Object in String: " + jsonStr;
+				document.getElementById("jsonContent").innerHTML = "Name:"+myObj.name+", Age:"+myObj.age+", City:"+myObj.city;
+			&lt;/script&gt;
+		</font>
+	</pre>
+	<center><b><a href="./JSON_Tutorial.html"><font size='6'>Back</font></a></b></center>	
+</body>
+</html>

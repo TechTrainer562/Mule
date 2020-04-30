@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title> Arrays as JSON Object</title>
+</head>
+<body>
+	<h2> Input Data </h2>
+	<p id="jsonString"></p>
+	<hr/>
+	<h2> Output Data </h2>
+	<p id="jsonContent"></p>	
+	<script>
+		var jsonAry=["Ford", "BMW", "Fiat"];
+		document.getElementById("jsonString").innerHTML = "Arrays as JSON Object: [" + jsonAry+"]";
+		for (key in jsonAry){
+			document.getElementById("jsonContent").innerHTML += key+":"+jsonAry[key]+"<br>" ;
+		}
+	</script>
+	<hr/>
+	<h2> Script </h2>
+	<pre>
+		<font size='4'>
+			&lt;script&gt;
+				var jsonAry=["Ford", "BMW", "Fiat"];
+				document.getElementById("jsonString").innerHTML = "Arrays as JSON Object: " + jsonAry;
+				for (key in jsonAry){
+					document.getElementById("jsonContent").innerHTML += key+":"+jsonAry[key]+"&lt;br&gt;";
+				}
+			&lt;script&gt;
+		</font>
+	</pre>
+	<center><b><a href="./JSON_Tutorial.html"><font size='6'>Back</font></a></b></center>
+</body>
+</html>

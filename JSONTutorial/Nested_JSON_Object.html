@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title> Nested JSON Object</title>
+</head>
+<body>
+	<h2> Input Data </h2>
+	<p id="jsonString"></p>
+	<hr/>
+	<h2> Output Data </h2>
+	<p id="jsonContent"></p>	
+	<hr/>
+	<h2> Output Data </h2>
+	<p id="jsonNestedContent"></p>	
+	<script>
+		var myObj = {"name":"John","age":30,"cars": {"car1":"Ford","car2":"BMW","car3":"Fiat"}} // Nested JSON Object
+		myNestedObj=myObj.cars;
+		document.getElementById("jsonString").innerHTML = "Nested JSON Object: " + JSON.stringify(myObj);
+		myObj.cars = JSON.stringify(myObj.cars);
+		for (key in myObj){
+			document.getElementById("jsonContent").innerHTML += key+":"+myObj[key]+"<br>" ;
+		}
+		for (nestedkey in myNestedObj){
+			document.getElementById("jsonNestedContent").innerHTML += nestedkey+":"+myNestedObj[nestedkey]+"<br>" ;
+		}
+	</script>
+	<hr/>
+	<h2> Script </h2>
+	<pre>
+		<font size='4'>
+			&lt;script&gt;
+				var myObj = {"name":"John","age":30,"cars": {"car1":"Ford","car2":"BMW","car3":"Fiat"}} // Nested JSON Object
+				myNestedObj=myObj.cars;
+				document.getElementById("jsonString").innerHTML = "Nested JSON Object: " + JSON.stringify(myObj);
+				myObj.cars = JSON.stringify(myObj.cars);
+				for (key in myObj){
+					document.getElementById("jsonContent").innerHTML += key+":"+myObj[key]+"&lt;br&gt;" ;
+				}
+				for (nestedkey in myNestedObj){
+					document.getElementById("jsonNestedContent").innerHTML += nestedkey+":"+myNestedObj[nestedkey]+"&lt;br&gt;" ;
+				}
+			&lt;/script&gt;
+		</font>
+	</pre>
+	<center><b><a href="./JSON_Tutorial.html"><font size='6'>Back</font></a></b></center>
+</body>
+</html>
