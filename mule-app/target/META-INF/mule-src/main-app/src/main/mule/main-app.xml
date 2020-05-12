@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="cf998345-a02a-416a-9825-e3e97f3c859e" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	
+	<!-- we need to import the Mule configuration file -->
+	<import doc:name="Import" file="common-flows.xml" doc:id="60409d4e-1508-42de-8d6e-4adcc8def87f" />
+	
+	<flow name="testFlow" doc:id="a8c48930-bc49-4521-ad9a-9d5a1926d17e" >
+		<http:listener doc:name="Listener" doc:id="ed7fd227-b615-4ddc-b276-81dea49b4ba0" config-ref="HTTP_Listener_config" path="/"/>
+		
+		<!-- we can invoke a flow inside the imported Mule configuration file  -->
+		<flow-ref doc:name="Flow-ref to echoFlow" doc:id="88c5a2c8-b817-48f6-b5c3-2ac46b019d53" name="echoFlow"/>
+	</flow>
+</mule>
