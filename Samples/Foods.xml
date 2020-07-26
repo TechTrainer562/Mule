@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<foods>
+	<food>
+		<name>English Muffin</name>
+		<price>$5.00</price>
+		<desc>English Muffin - Breakfast Item</desc>
+		<calories>70</calories>
+		<dial>121122</dial>
+ 	</food>	
+    <food>
+		<name>French Toast</name>
+		<price>$4.50</price>
+		<desc>Thick slices made from our homemade sourdough bread</desc>
+		<calories>600</calories>
+		<dial/>
+ 	</food>	
+	<food>
+		<name>Homestyle Breakfast</name>
+		<price>$6.95</price>
+		<desc>Two eggs, bacon or sausage, toast and our ever-popular hash browns</desc>
+		<calories>950</calories>
+		<dial>1111222</dial>
+ 	</food>	
+	<food>
+		<name>donut</name>
+		<price>$8.00</price>
+		<desc>donut with creamy chocolate</desc>
+		<calories>300</calories>
+		<dial>222111</dial>
+ 	</food>	
+</foods>

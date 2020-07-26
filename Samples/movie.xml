@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<movies id="movies_list">
+  <movie>
+    <name>Coherence</name>
+    <director>JAMES</director>
+    <year>2014</year>
+    <IMDB>7.2</IMDB>
+    <actors>
+      <name>Emily Foxler</name>
+      <name>Nicholas Brendon</name>
+      <name>Maury Sterling</name>
+    </actors>
+  </movie>
+  <movie>
+    <name>Predestination</name>
+    <director>The Spierig  Brothers</director>
+    <year>2014</year>
+    <IMDB>7.4</IMDB>
+    <actors>
+      <name>Ethan Hawke</name>
+      <name>Sarah Snook</name>
+      <name>Madeleine West</name>
+    </actors>
+  </movie>
+</movies>
